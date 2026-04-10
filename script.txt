@@ -1,0 +1,49 @@
+// Default role
+let selectedRole = "doctor";
+
+// Role switching (Doctor / Caretaker)
+function selectRole(role) {
+    selectedRole = role;
+
+    const doctorBtn = document.getElementById("doctorBtn");
+    const caretakerBtn = document.getElementById("caretakerBtn");
+
+    if (role === "doctor") {
+        doctorBtn.classList.add("active");
+        caretakerBtn.classList.remove("active");
+    } else {
+        caretakerBtn.classList.add("active");
+        doctorBtn.classList.remove("active");
+    }
+}
+
+// LOGIN FUNCTION
+function login() {
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let error = document.getElementById("error");
+
+    error.textContent = "";
+
+    if (username === "" || password === "") {
+        error.textContent = "Please fill all fields!";
+        return;
+    }
+
+    // Find user from data.js
+    const user = window.users.find(
+        u => u.username === username && u.password === password && u.role === selectedRole
+    );
+
+    if (!user) {
+        error.textContent = "Invalid username, password, or role!";
+        return;
+    }
+
+    // SUCCESS → Redirect based on role
+    if (user.role === "doctor") {
+        window.location.href = "doctorDashboard.html";
+    } else {
+        window.location.href = "caretakerDashboard.html";
+    }
+}

@@ -1,0 +1,20 @@
+// Read ID from URL
+const urlParams = new URLSearchParams(window.location.search);
+const id = parseInt(urlParams.get("id"));
+
+const patient = window.patients.find(p => p.id === id);
+
+// Update UI
+document.getElementById("pImg").src = patient.img;
+document.getElementById("pName").textContent = patient.name;
+document.getElementById("pAge").textContent = "Age: " + patient.age;
+document.getElementById("pDob").textContent = "DOB: " + patient.dob;
+document.getElementById("pGender").textContent = "Gender: " + patient.gender;
+
+document.getElementById("pHR").textContent = patient.heartRate;
+document.getElementById("pBP").textContent = patient.bloodPressure;
+document.getElementById("pOxy").textContent = patient.oxygenLevel;
+document.getElementById("pTemp").textContent = patient.temperature;
+
+document.getElementById("pHistory").innerHTML =
+    patient.history.map(h => `<li>${h}</li>`).join("");

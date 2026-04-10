@@ -1,0 +1,66 @@
+// USER DATABASE (TEMPORARY DEMO)
+// username, password, role, and assigned patients for caretakers
+
+window.users = [
+    {
+        username: "doctor1",
+        password: "doc123",
+        role: "doctor",
+    },
+    {
+        username: "care1",
+        password: "care123",
+        role: "caretaker",
+        patients: [1]   // Only patient ID 1
+    },
+    {
+        username: "care2",
+        password: "care456",
+        role: "caretaker",
+        patients: [2]   // Only patient ID 2
+    }
+];
+
+// PATIENT DATABASE
+    window.patients = [
+    {
+        id: 1,
+        name: "John Doe",
+        age: 65,
+        dob: "1959-01-12",
+        gender: "Male",
+        img: "https://randomuser.me/api/portraits/men/11.jpg",
+        heartRate: "78 bpm",
+        bloodPressure: "120/80 mmHg",
+        oxygenLevel: "98%",
+        temperature: "98.6°F",
+        history: ["Mild hypertension", "Recovered from COVID-19"]
+    },
+    {
+        id: 2,
+        name: "Ram",
+        age: 23,
+        dob: "2002-06-18",
+        gender: "Male",
+        img: "https://randomuser.me/api/portraits/men/22.jpg",
+        heartRate: "82 bpm",
+        bloodPressure: "118/76 mmHg",
+        oxygenLevel: "97%",
+        temperature: "98.4°F",
+        history: ["Seasonal allergies", "Minor surgery 2018"]
+    },
+
+    {
+        id: 3,
+        name: "Priya Sharma",  
+        age: 27,
+        dob: "2005-01-20",
+        gender: "Female",
+        img: "https://randomuser.me/api/portraits/women/30.jpg",
+        heartRate: "75 bpm",
+        bloodPressure: "115/78 mmHg",
+        oxygenLevel: "99%",
+        temperature: "98.2°F",
+        history: ["Asthma", "Under annual respiratory check-up"]
+    }
+];

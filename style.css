@@ -1,0 +1,319 @@
+/* ===== PROFESSIONAL LOGIN PAGE ===== */
+
+.login-body {
+    background: url("img.jpg")no-repeat center center fixed !important;
+     background-size: cover !important;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+
+/* LOGIN CONTAINER */
+.login-box {
+    width: 350px;
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* ---------------- ROLE SWITCH BUTTONS ---------------- */
+.role-switch {
+    display: flex;
+    justify-content: space-between;
+    background: #ecf0f1;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.role-btn {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    background: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #34495e;
+}
+
+.role-btn.active {
+    background: linear-gradient(to right, #0f62f5, #3385ff);
+    color: white;
+}
+
+/* INPUT FIELDS */
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #bdc3c7;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 4px rgba(52,152,219,0.5);
+}
+
+/* PASSWORD FIELD */
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+    opacity: 0.7;
+}
+
+.toggle-icon:hover {
+    opacity: 1;
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background: #217dbb;
+}
+
+/* ERROR TEXT */
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* DETAILS PAGE BACKGROUND */
+.details-body {
+    background: linear-gradient(135deg, #c3e5ff, #ffffff);
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+}
+
+/* Container */
+.details-container {
+    max-width: 650px;
+    margin: auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.20);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Profile Section */
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 18px;
+    display: block;
+    margin: auto;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+.profile-section h2 {
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+/* Vitals Section */
+.vitals-section {
+    background: #e8f7ff;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 20px;
+    border-left: 5px solid #3498db;
+}
+
+.vitals-section h3 {
+    margin-bottom: 10px;
+    color: #1d72b8;
+}
+
+.vitals-section p {
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* History Section */
+.history-section {
+    background: #fff3e6;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+    border-left: 5px solid #e67e22;
+}
+
+.history-section h3 {
+    margin-bottom: 10px;
+    color: #d35400;
+}
+
+.history-section ul li {
+    margin-bottom: 6px;
+}
+
+/* Back Button */
+.back-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007bff, #5599ff);
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #005fd4, #3f83ff);
+}
+
+/* Clickable Cards */
+.clickable {
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+.clickable:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+}
+/* DASHBOARD BACKGROUND */
+body {
+    background: url("care.jpg")no-repeat center center fixed !important;
+     background-size: cover !important;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d3557;
+}
+
+/* Container for cards */
+.dashboard-container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Grid layout */
+.patient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* Patient Card */
+.patient-card {
+    background: #cdcbcc;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Hover Animation */
+.patient-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 14px 30px rgba(0,0,0,0.15);
+}
+
+/* Patient Photo */
+.patient-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Name */
+.patient-card h3 {
+    margin: 8px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1d3557;
+}
+
+/* Info text */
+.patient-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Icon Styling */
+.patient-card i {
+    color: #457b9d;
+    margin-right: 6px;
+    font-size: 16px;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

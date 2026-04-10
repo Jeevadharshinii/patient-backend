@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Caretaker Dashboard</title>
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <h1 class="dashboard-title">Assigned Patients</h1>
+
+    <div class="dashboard-container">
+        <div class="patient-grid" id="patientGrid"></div>
+    </div>
+
+    <script>
+        const caretaker = window.users.find(u => u.role === "caretaker");
+        const assigned = caretaker.patients;
+        const grid = document.getElementById("patientGrid");
+
+        const assignedPatients = window.patients.filter(p => assigned.includes(p.id));
+
+        assignedPatients.forEach(p => {
+            const card = document.createElement("div");
+            card.className = "patient-card clickable";
+
+            card.innerHTML = `
+    <img src="${p.img}">
+
+    <h3><i class="fa-solid fa-user"></i> ${p.name}</h3>
+
+    <p><i class="fa-solid fa-calendar"></i> Age: ${p.age}</p>
+    <p><i class="fa-solid fa-cake-candles"></i> DOB: ${p.dob}</p>
+    <p><i class="fa-solid fa-venus-mars"></i> Gender: ${p.gender}</p>
+`;
+
+            card.onclick = () => {
+                window.location.href = `patientDetails.html?id=${p.id}`;
+            };
+
+            grid.appendChild(card);
+        });
+    </script>
+
+</body>
+
+</html>

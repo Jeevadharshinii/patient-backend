@@ -1,0 +1,52 @@
+// Caretaker logged-in user (you can store this on login page)
+const caretaker = window.users.find(u => u.role === "caretaker");
+
+// Assigned patient IDs
+const assigned = caretaker.patients;
+
+const grid = document.getElementById("patientGrid");
+
+// Filter only assigned patients
+const assignedPatients = window.patients.filter(p => assigned.includes(p.id));
+
+assignedPatients.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "patient-card";
+
+    card.innerHTML = `
+        <img src="${p.img}">
+        <h3>${p.name}</h3>
+        <p>Age: ${p.age}</p>
+        <p>DOB: ${p.dob}</p>
+        <p>Gender: ${p.gender}</p>
+    `;
+
+    // When clicking card → show full details
+    card.onclick = () => openModal(p);
+
+    grid.appendChild(card);
+});
+
+// OPEN MODAL
+function openModal(p) {
+    document.getElementById("mImg").src = p.img;
+    document.getElementById("mName").textContent = p.name;
+    document.getElementById("mAge").textContent = p.age;
+    document.getElementById("mDob").textContent = p.dob;
+    document.getElementById("mGender").textContent = p.gender;
+
+    document.getElementById("mHeart").textContent = p.heartRate;
+    document.getElementById("mBP").textContent = p.bloodPressure;
+    document.getElementById("mOxy").textContent = p.oxygenLevel;
+    document.getElementById("mTemp").textContent = p.temperature;
+
+    document.getElementById("mHistory").innerHTML =
+        p.history.map(h => `<li>${h}</li>`).join("");
+
+    document.getElementById("modal").style.display = "block";
+}
+
+// CLOSE MODAL
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
