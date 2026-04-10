@@ -5,7 +5,7 @@ from alerts import check_vitals, send_alert_email
 import hashlib
 import os
 
-app = Flask(__name__, static_folder=r"C:\Users\D E L L\Downloads\patient app", static_url_path="")
+app = Flask(__name__)
 app.secret_key = "patient_app_secret_key_2024"
 CORS(app, supports_credentials=True)
 
@@ -27,20 +27,6 @@ def login_required(role=None):
             return f(*args, **kwargs)
         return wrapper
     return decorator
-
-
-# SERVE FRONTEND
-@app.route("/")
-def index(): return app.send_static_file("index.html")
-
-@app.route("/doctorDashboard.html")
-def doctor_dashboard(): return app.send_static_file("doctorDashboard.html")
-
-@app.route("/caretakerDashboard.html")
-def caretaker_dashboard(): return app.send_static_file("caretakerDashboard.html")
-
-@app.route("/patientDetails.html")
-def patient_details(): return app.send_static_file("patientDetails.html")
 
 
 # AUTH
