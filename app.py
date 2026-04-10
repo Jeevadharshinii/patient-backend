@@ -5,7 +5,7 @@ from alerts import check_vitals, send_alert_email
 import hashlib
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", static_url_path="")
 app.secret_key = "patient_app_secret_key_2024"
 CORS(app, supports_credentials=True)
 
